@@ -1,0 +1,113 @@
+---
+title: نمونه کامل کامپوننت‌ها
+description: نمایش تمام کامپوننت‌های داخلی Starlight
+head: []
+
+---
+
+import {
+  Aside,
+  Card,
+  CardGrid,
+  Code,
+  Icon,
+  LinkCard,
+  Tabs,
+  TabItem,
+  FileTree
+} from '@astrojs/starlight/components';
+
+
+به صفحه مستندات شرکت ما خوش آمدید. در اینجا می‌توانید تمام کامپوننت‌های موجود را در حالت RTL مشاهده کنید.
+
+## تذکرات (Asides)
+
+اینها تمام انواع تذکرات موجود هستند.
+
+<Aside type="note" title="نکته">
+این یک نکته برای اطلاع‌رسانی است.
+</Aside>
+
+<Aside type="tip" title="راهنمایی">
+این یک راهنمایی مفید برای کاربران است.
+</Aside>
+
+<Aside type="caution" title="احتیاط">
+این یک هشدار احتیاط است که نیاز به توجه دارد.
+</Aside>
+
+<Aside type="danger" title="خطر">
+این یک هشدار خطر برای موارد حساس است.
+</Aside>
+
+## کارت‌ها (Cards)
+
+می‌توانید از کارت‌ها برای گروه‌بندی اطلاعات مرتبط استفاده کنید.
+
+<CardGrid>
+  <Card title="کارت اول" icon="star">
+    متن نمونه برای کارت اول. آیکون این کارت `star` است.
+  </Card>
+  <Card title="کارت دوم" icon="setting">
+    متن نمونه برای کارت دوم. آیکون این کارت `setting` است.
+  </Card>
+  <Card title="کارت سوم" icon="file-search">
+    متن نمونه برای کارت سوم.
+  </Card>
+</CardGrid>
+
+## کارت‌های لینک (LinkCards)
+
+از این کارت‌ها برای لینک دادن به صفحات دیگر استفاده کنید.
+
+<LinkCard
+  title="مستندات Starlight"
+  description="به مستندات رسمی Starlight سر بزنید."
+  href="https://starlight.astro.build/"
+/>
+
+## تب‌ها (Tabs)
+
+برای نمایش محتوای مختلف در یک فضا از تب‌ها استفاده کنید.
+
+<Tabs>
+  <TabItem label="تب اول">
+    محتوای تب اول در اینجا قرار می‌گیرد.
+  </TabItem>
+  <TabItem label="تب دوم">
+    محتوای تب دوم کمی متفاوت است و می‌توانید کدهای خود را نیز در آن قرار دهید.
+    ```js
+    console.log('Hello, from Tab 2!');
+    ```
+  </TabItem>
+</Tabs>
+
+## آیکون‌ها (Icons)
+
+می‌توانید از آیکون‌ها در متن استفاده کنید: <Icon name="heart" />. Starlight مجموعه‌ای از آیکون‌های داخلی دارد. برای دیدن لیست کامل به مستندات مراجعه کنید.
+
+## کد (Code)
+
+بلوک‌های کد برای نمایش کد استفاده می‌شوند.
+
+```sh
+npm run dev
+```
+
+برای کد درون‌خطی، از کامپوننت <Code code="Code" /> استفاده کنید. برای مثال، `const greeting = 'hello';`.
+
+## درخت فایل (FileTree)
+
+برای نمایش ساختار یک پوشه از این کامپوننت استفاده کنید.
+
+<FileTree>
+- src/
+  - components/
+    - Button.astro
+    - Header.astro
+  - content/
+    - docs/
+      - index.mdx
+  - layouts/
+    - Layout.astro
+</FileTree>

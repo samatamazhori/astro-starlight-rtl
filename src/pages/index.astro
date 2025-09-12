@@ -1,16 +1,44 @@
 ---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { Card, CardGrid, Icon } from '@astrojs/starlight/components';
 
+const frontmatter = {
+  title: 'صفحه اصلی',
+  description: 'به مستندات شرکت ما خوش آمدید',
+  template: 'splash',
+  hero: {
+    title: 'به مستندات شرکت ما خوش آمدید',
+    tagline: 'اینجا همه چیزهایی را که برای شروع کار با محصولات و خدمات ما نیاز دارید، پیدا خواهید کرد.',
+    actions: [
+      {
+        text: 'شروع سریع',
+        link: '/getting-started/',
+        variant: 'primary',
+      },
+      {
+        text: 'مرجع',
+        link: '/reference/',
+        variant: 'secondary',
+      },
+    ],
+  },
+  banner: {                                                                  
+    content : "به نسخه یک از مستندات داخلی خوش آمدید. 🚀"                       
+    },                                                                            
+  next: false,
+};
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<StarlightPage frontmatter={frontmatter}>
+  <CardGrid>
+    <Card title="راهنمای شروع سریع" icon="rocket">
+      <p>با دنبال کردن راهنمای گام به گام ما، در کمترین زمان ممکن شروع به کار کنید.</p>
+    </Card>
+    <Card title="مستندات جامع" icon="document">
+      <p>به طور عمیق در مستندات ما کاوش کنید و همه چیز را در مورد ویژگی ها و عملکردها بیاموزید.</p>
+    </Card>
+    <Card title="مرجع API" icon="puzzle">
+      <p>به دنبال اطلاعات دقیق در مورد API ما هستید؟ اینجا مکان مناسبی است.</p>
+    </Card>
+  </CardGrid>
+</StarlightPage>
